@@ -67,7 +67,7 @@ onMounted(() => {
 // ✅ Save tickets to localStorage
 watch(
   tickets,
-  (val) => {
+  (val: Ticket[]) => {
     localStorage.setItem("ticketapp_session", JSON.stringify(val));
   },
   { deep: true }
@@ -136,7 +136,7 @@ function confirmDelete(ticket: Ticket) {
 function handleDelete() {
   if (selectedTicket.value) {
     tickets.value = tickets.value.filter(
-      (t) => t.id !== selectedTicket.value?.id
+      (t: Ticket) => t.id !== selectedTicket.value?.id
     );
     toast.success(`"${selectedTicket.value.title}" deleted successfully!`);
     isDeleteDialogOpen.value = false;

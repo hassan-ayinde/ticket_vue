@@ -1,4 +1,10 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import {
+  createRouter,
+  createWebHistory,
+  RouteRecordRaw,
+  RouteLocationNormalized,
+  NavigationGuardNext,
+} from "vue-router";
 
 import Layout from "../components/Layout.vue";
 import Header from "../components/Header.vue";
@@ -38,12 +44,18 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, _from, next) => {
-  if (to.meta.requiresAuth && !isAuthenticated()) {
-    next("/login");
-  } else {
-    next();
+router.beforeEach(
+  (
+    to: RouteLocationNormalized,
+    _from: RouteLocationNormalized,
+    next: NavigationGuardNext
+  ) => {
+    if (to.meta.requiresAuth && !isAuthenticated()) {
+      next("/login");
+    } else {
+      next();
+    }
   }
-});
+);
 
 export default router;

@@ -22,9 +22,13 @@
     </div>
 
     <!-- RIGHT SECTION -->
-    <div class="w-[75%] mx-auto md:w-full flex justify-center items-center h-96">
+    <div
+      class="w-[75%] mx-auto md:w-full flex justify-center items-center h-96"
+    >
       <Tabs default-value="login" class="w-fit md:w-full">
-        <TabsList class="bg-transparent mx-auto w-72 border-b border-gray-300 rounded-none pb-0 px-0">
+        <TabsList
+          class="bg-transparent mx-auto w-72 border-b border-gray-300 rounded-none pb-0 px-0"
+        >
           <TabsTrigger
             value="login"
             class="h-9 cursor-pointer data-[state=active]:border-b-2 rounded-none data-[state=active]:border-b-blue-600 data-[state=active]:shadow-none"
@@ -46,9 +50,15 @@
             <p class="text-gray-500">Log in to continue.</p>
           </div>
 
-          <form @submit.prevent="handleLogin" class="max-w-sm mx-auto space-y-3">
+          <form
+            @submit.prevent="handleLogin"
+            class="max-w-sm mx-auto space-y-3"
+          >
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-900 mb-1">
+              <label
+                for="email"
+                class="block text-sm font-medium text-gray-900 mb-1"
+              >
                 Email
               </label>
               <input
@@ -58,11 +68,16 @@
                 placeholder="name@example.com"
                 class="border border-gray-300 text-sm rounded-lg w-full p-2.5 focus:ring-blue-500 focus:border-blue-500"
               />
-              <p v-if="errors.email" class="text-red-500 text-xs mt-1">{{ errors.email }}</p>
+              <p v-if="errors.email" class="text-red-500 text-xs mt-1">
+                {{ errors.email }}
+              </p>
             </div>
 
             <div>
-              <label for="password" class="block text-sm font-medium text-gray-900 mb-1">
+              <label
+                for="password"
+                class="block text-sm font-medium text-gray-900 mb-1"
+              >
                 Password
               </label>
               <input
@@ -71,20 +86,31 @@
                 type="password"
                 class="border border-gray-300 text-sm rounded-lg w-full p-2.5 focus:ring-blue-500 focus:border-blue-500"
               />
-              <p v-if="errors.password" class="text-red-500 text-xs mt-1">{{ errors.password }}</p>
+              <p v-if="errors.password" class="text-red-500 text-xs mt-1">
+                {{ errors.password }}
+              </p>
             </div>
 
             <div class="flex justify-between items-center mb-2">
               <div class="flex items-center">
-                <input id="remember" type="checkbox" class="w-4 h-4 border-gray-300" />
-                <label for="remember" class="ml-2 text-sm text-gray-700">Remember me</label>
+                <input
+                  id="remember"
+                  type="checkbox"
+                  class="w-4 h-4 border-gray-300"
+                />
+                <label for="remember" class="ml-2 text-sm text-gray-700"
+                  >Remember me</label
+                >
               </div>
               <RouterLink to="/" class="text-blue-600 text-sm hover:underline">
                 Forgot Password?
               </RouterLink>
             </div>
 
-            <Button type="submit" class="w-full bg-blue-700 text-white hover:bg-blue-800">
+            <Button
+              type="submit"
+              class="w-full bg-blue-700 text-white hover:bg-blue-800"
+            >
               Login
             </Button>
           </form>
@@ -92,9 +118,15 @@
 
         <!-- REGISTER FORM -->
         <TabsContent value="register">
-          <form @submit.prevent="handleRegister" class="max-w-sm mx-auto space-y-3">
+          <form
+            @submit.prevent="handleRegister"
+            class="max-w-sm mx-auto space-y-3"
+          >
             <div>
-              <label for="reg-email" class="block text-sm font-medium text-gray-900 mb-1">
+              <label
+                for="reg-email"
+                class="block text-sm font-medium text-gray-900 mb-1"
+              >
                 Email
               </label>
               <input
@@ -104,11 +136,16 @@
                 placeholder="name@example.com"
                 class="border border-gray-300 text-sm rounded-lg w-full p-2.5"
               />
-              <p v-if="errors.emailReg" class="text-red-500 text-xs mt-1">{{ errors.emailReg }}</p>
+              <p v-if="errors.emailReg" class="text-red-500 text-xs mt-1">
+                {{ errors.emailReg }}
+              </p>
             </div>
 
             <div>
-              <label for="reg-password" class="block text-sm font-medium text-gray-900 mb-1">
+              <label
+                for="reg-password"
+                class="block text-sm font-medium text-gray-900 mb-1"
+              >
                 Password
               </label>
               <input
@@ -117,11 +154,16 @@
                 type="password"
                 class="border border-gray-300 text-sm rounded-lg w-full p-2.5"
               />
-              <p v-if="errors.passwordReg" class="text-red-500 text-xs mt-1">{{ errors.passwordReg }}</p>
+              <p v-if="errors.passwordReg" class="text-red-500 text-xs mt-1">
+                {{ errors.passwordReg }}
+              </p>
             </div>
 
             <div>
-              <label for="reg-confirm" class="block text-sm font-medium text-gray-900 mb-1">
+              <label
+                for="reg-confirm"
+                class="block text-sm font-medium text-gray-900 mb-1"
+              >
                 Confirm Password
               </label>
               <input
@@ -133,7 +175,9 @@
               <p
                 v-if="errors.confirmPassword"
                 class="text-red-500 text-xs mt-1"
-              >{{ errors.confirmPassword }}</p>
+              >
+                {{ errors.confirmPassword }}
+              </p>
             </div>
 
             <div class="flex items-start">
@@ -150,9 +194,14 @@
                 </a>
               </label>
             </div>
-            <p v-if="errors.terms" class="text-red-500 text-xs mb-3">{{ errors.terms }}</p>
+            <p v-if="errors.terms" class="text-red-500 text-xs mb-3">
+              {{ errors.terms }}
+            </p>
 
-            <Button type="submit" class="w-full bg-blue-700 text-white hover:bg-blue-800">
+            <Button
+              type="submit"
+              class="w-full bg-blue-700 text-white hover:bg-blue-800"
+            >
               Register new account
             </Button>
           </form>
@@ -170,7 +219,7 @@ import { Button } from "@/components/ui/button";
 import { Toaster, toast } from "vue-sonner";
 
 const router = useRouter();
-const route = useRoute();
+useRoute();
 
 // --- Reactive state ---
 const loginForm = ref({ email: "", password: "" });
@@ -192,7 +241,14 @@ const errors = ref({
 
 // --- LOGIN ---
 function handleLogin() {
-  errors.value = { email: "", password: "", emailReg: "", passwordReg: "", confirmPassword: "", terms: "" };
+  errors.value = {
+    email: "",
+    password: "",
+    emailReg: "",
+    passwordReg: "",
+    confirmPassword: "",
+    terms: "",
+  };
 
   if (!loginForm.value.email) errors.value.email = "Email is required";
   if (!loginForm.value.password) errors.value.password = "Password is required";
@@ -221,7 +277,14 @@ function handleLogin() {
 
 // --- REGISTER ---
 function handleRegister() {
-  errors.value = { email: "", password: "", emailReg: "", passwordReg: "", confirmPassword: "", terms: "" };
+  errors.value = {
+    email: "",
+    password: "",
+    emailReg: "",
+    passwordReg: "",
+    confirmPassword: "",
+    terms: "",
+  };
 
   if (!registerForm.value.email) errors.value.emailReg = "Email is required";
   if (!registerForm.value.password)
@@ -242,7 +305,10 @@ function handleRegister() {
     return;
 
   const existingUser = localStorage.getItem("user");
-  if (existingUser && JSON.parse(existingUser).email === registerForm.value.email) {
+  if (
+    existingUser &&
+    JSON.parse(existingUser).email === registerForm.value.email
+  ) {
     toast.error("Email already registered!");
     return;
   }
@@ -254,6 +320,11 @@ function handleRegister() {
   localStorage.setItem("user", JSON.stringify(newUser));
   toast.success("Account created successfully!");
 
-  registerForm.value = { email: "", password: "", confirmPassword: "", terms: false };
+  registerForm.value = {
+    email: "",
+    password: "",
+    confirmPassword: "",
+    terms: false,
+  };
 }
 </script>

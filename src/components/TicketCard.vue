@@ -12,14 +12,14 @@
           class="text-white capitalize px-2 py-1 rounded-md text-xs font-medium"
           :class="getStatusColor(ticket.status)"
         >
-          {{ ticket.status.replace('_', ' ') }}
+          {{ ticket.status.replace("_", " ") }}
         </span>
       </div>
     </div>
 
     <!-- Content -->
     <div class="px-4 py-2 text-gray-700 dark:text-gray-300">
-      <p>{{ ticket.description || 'No description provided.' }}</p>
+      <p>{{ ticket.description || "No description provided." }}</p>
     </div>
 
     <!-- Footer -->
@@ -47,7 +47,7 @@ interface Ticket {
   status: string;
 }
 
-const props = defineProps<{
+defineProps<{
   ticket: Ticket;
   onEdit?: () => void;
   onDelete: () => void;

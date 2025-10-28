@@ -9,6 +9,10 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "lib": ["ES2015", "DOM"]
+    "lib": ["ES2022", "DOM"],
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "skipLibCheck": true
   }
 }
